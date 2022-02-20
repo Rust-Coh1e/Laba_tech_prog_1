@@ -5,7 +5,7 @@ using namespace std;
 
 float Queue_private::average()
 {
-	Unit* last = getLast();
+	Node* last = getLast();
 	float avarage = 0;
 	float res;
 	if (size == 0)
@@ -28,7 +28,7 @@ float Queue_private::average()
 
 float Queue_protected::average()
 {
-	Unit* last = getLast();
+	Node* last = getLast();
 	float avarage = 0;
 	float res;
 	if (size == 0)
@@ -51,7 +51,7 @@ float Queue_protected::average()
 
 float Queue_public::average()
 {
-	Unit* last = getLast();
+	Node* last = getLast();
 	float avarage = 0;
 	float res;
 	if (size == 0)

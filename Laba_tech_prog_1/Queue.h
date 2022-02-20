@@ -1,15 +1,15 @@
 #pragma once
 
-typedef struct Unit
+typedef struct Node
 {
 	int data = 0; // count 
-	Unit* prev = 0; // pointer to the previous element
+	Node* prev = nullptr; // pointer to the previous element
 };
 
 class Queue
 {
 private:
-	Unit* last = 0; // pointer to the end of the queue
+	Node* last = nullptr; // pointer to the end of the queue
 protected:
 	int size; // size of Queue
 	
@@ -19,7 +19,7 @@ public:
 	Queue();
 	~Queue();
 	
-	Unit* getLast();
+	Node* getLast();
 	int pop();
 	void push(int a);
 	void print();

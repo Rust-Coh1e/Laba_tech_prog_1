@@ -13,21 +13,21 @@ Queue::~Queue()
 {
 	while (size > 0)
 	{
-		Unit* temp = last;
+		Node* temp = last;
 		last = temp->prev;
 		delete temp;
 		size--;
 	}
 }
 
-Unit* Queue::getLast()
+Node* Queue::getLast()
 {
 	return last;
 }
 
 void Queue::push(int a)
 {
-	Unit* new_unit = new Unit;
+	Node* new_unit = new Node;
 	new_unit-> prev = last;
 	last = new_unit;
 	last->data = a;
@@ -36,7 +36,7 @@ void Queue::push(int a)
 
 int Queue::pop()
 {
-	Unit* tmp = last;
+	Node* tmp = last;
 	int res = 0;
 	if (tmp->prev == nullptr)
 	{
@@ -63,7 +63,7 @@ int Queue::pop()
 
 void Queue::print()
 {
-	Unit* tmp = last;
+	Node* tmp = last;
 	while (tmp->prev != nullptr)
 	{
 		cout << tmp->data << " -> ";
@@ -75,7 +75,7 @@ void Queue::print()
 void Queue::copy(Queue& Q)
 {
 	int* tmp = new int[Q.size];
-	Unit* queue = Q.last;
+	Node* queue = Q.last;
 	for (int i = Q.size - 1; i >= 0; i--)
 	{
 		tmp[i] = queue->data;
@@ -92,7 +92,7 @@ void Queue::copy(Queue& Q)
 void Queue::merge(Queue& Q)
 {
 	int* tmp = new int[Q.size];
-	Unit* queue = Q.last;
+	Node* queue = Q.last;
 	for (int i = Q.size - 1; i >= 0; i--)
 	{
 		tmp[i] = queue->data;
